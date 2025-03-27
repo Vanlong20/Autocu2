@@ -10,5 +10,5 @@ import poly.edu.Model.SanPham;
 public interface DanhMucDAO extends JpaRepository<DanhMuc, String>{
 
     // Ví dụ: tìm xe theo tên xe
-    List<SanPham> findByTenDanhMuc(String tenDanhMuc);
+    List<SanPham> findByTenDanhMuc(String CategoryID);
 }

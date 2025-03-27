@@ -1,0 +1,73 @@
+[
+    {
+        "id": 1,
+        "name": "ĐĂNG",
+        "email": "yun@123gmail.com",
+        "role": "Admin",
+        "password": "********"
+    },
+    {
+        "id": 2,
+        "name": "ĐĂNG",
+        "email": "yun@123gmail.com",
+        "role": "Staff",
+        "password": "********"
+    },
+    {
+        "id": 3,
+        "name": "ĐĂNG",
+        "email": "yun@123gmail.com",
+        "role": "User",
+        "password": "********"
+    },
+    {
+        "id": 4,
+        "name": "ĐĂNG",
+        "email": "yun@123gmail.com",
+        "role": "User",
+        "password": "********"
+    },
+    {
+        "id": 5,
+        "name": "ĐĂNG",
+        "email": "yun@123gmail.com",
+        "role": "User",
+        "password": "********"
+    },
+    {
+        "id": 6,
+        "name": "ĐĂNG",
+        "email": "yun@123gmail.com",
+        "role": "Staff",
+        "password": "********"
+    },
+    {
+        "id": 7,
+        "name": "ĐĂNG",
+        "email": "yun@123gmail.com",
+        "role": "Staff",
+        "password": "********"
+    },
+    {
+        "id": 8,
+        "name": "ĐĂNG",
+        "email": "yun@123gmail.com",
+        "role": "Staff",
+        "password": "********"
+    },
+    {
+        "id": 9,
+        "name": "ĐĂNG",
+        "email": "yun@123gmail.com",
+        "role": "Staff",
+        "password": "********"
+    },
+    {
+        "id": 1010,
+        "name": "ĐĂNG",
+        "email": "yun@123gmail.com",
+        "role": "Staff",
+        "password": "********"
+    }
+
+]
