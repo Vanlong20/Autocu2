@@ -123,8 +123,10 @@
 				</p>
 
               <div class="d-flex justify-content-between mt-3">
-                <a href="#" class="btn btn-outline-primary" onclick="window.location.href='/car?xeID=${xe.productID}'">Chi
-                  tiết</a>
+               <a href="${pageContext.request.contextPath}/details/${xe.productID}" >Xem Chi Tiết</a>
+
+                  
+
                 <a href="#" class="btn btn-danger">Mua ngay</a>
               </div>
             </div>

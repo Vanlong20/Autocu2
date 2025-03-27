@@ -1,11 +1,12 @@
 package poly.edu.Controller;
-// ngày 21/3
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import poly.edu.DAO.DanhMucDAO;
 import poly.edu.DAO.KhachHangDAO;
@@ -19,6 +20,7 @@ import poly.edu.Model.MaKhuyenMai;
 import poly.edu.Model.NhanVien;
 import poly.edu.Model.PhuKienOto;
 import poly.edu.Model.SanPham;
+import poly.edu.Service.SanPhamService;
 
 @Controller
 public class HomeController {
@@ -34,7 +36,8 @@ public class HomeController {
     private MaKhuyenMaiDAO maKhuyenMaiDAO;
     @Autowired
     private PhuKienOtoDAO phuKienOtoDAO;
-
+    @Autowired
+    private SanPhamService sanPhamService;
     @GetMapping(value = "/trangchu", produces = "text/html; charset=UTF-8")
     public String home(Model model) {
         try {
@@ -56,4 +59,27 @@ public class HomeController {
         }
         return "index2";
     }
+    @GetMapping("/details/{productId}")
+    public String getDetailsByProductId(@PathVariable("productId") String productId, Model model) {
+        List<SanPham> details = sanPhamDAO.findByProductId(productId);
+
+        if (!details.isEmpty()) {
+            SanPham sanPham = details.get(0);
+            String categoryID = sanPham.getDanhMuc().getCategoryID(); // Lấy categoryID
+            
+            // 🛠 Debug xem categoryID có bị null không
+            System.out.println("CategoryID: " + categoryID);
+            System.out.println("ProductID: " + productId);
+            
+            List<SanPham> sanPhamTuongTu = sanPhamService.getSanPhamTuongTu(categoryID, productId);
+            System.out.println("Số sản phẩm tương tự: " + sanPhamTuongTu.size());
+
+            model.addAttribute("sanPhamTuongTu", sanPhamTuongTu);
+        }
+
+        model.addAttribute("details", details);
+        return "Detail"; 
+    }
+
+
 }
